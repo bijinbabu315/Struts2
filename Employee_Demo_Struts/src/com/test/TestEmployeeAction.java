@@ -10,7 +10,7 @@ import com.opensymphony.xwork2.ActionProxy;
 
 public class TestAction  extends StrutsTestCase {
 	
-	final Logger LOGGER = Logger.getLogger("TestAction");
+	final Logger logger = Logger.getLogger("TestAction");
     
 	@Test
     public void testSuccessfulLogin() {
@@ -20,7 +20,7 @@ public class TestAction  extends StrutsTestCase {
        try {
 		assertEquals("success", proxy.execute());
 	} catch (Exception e) {
-		LOGGER.log(Level.SEVERE, e.getMessage());
+		logger.log(Level.SEVERE, e.getMessage());
 	}
  
         
