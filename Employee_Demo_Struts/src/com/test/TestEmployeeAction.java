@@ -1,5 +1,6 @@
 package com.test;
 
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -8,21 +9,25 @@ import org.junit.Test;
 
 import com.opensymphony.xwork2.ActionProxy;
 
-public class TestAction  extends StrutsTestCase {
+public class TestEmployeeAction  extends StrutsTestCase {
+	    
+	final Logger logger = Logger.getLogger("TestEmployeeAction");
 	
-	final Logger logger = Logger.getLogger("TestAction");
-    
-	@Test
-    public void testSuccessfulLogin() {
-    
-        
-        ActionProxy proxy = getActionProxy("/hello");
-       try {
-		assertEquals("success", proxy.execute());
-	} catch (Exception e) {
-		logger.log(Level.SEVERE, e.getMessage());
+	@Test   
+	public void testSuccessfulRegistration() {
+	    	request.setParameter("age", "15");
+	        
+	        ActionProxy proxy = getActionProxy("/addEmployee");
+	        EmployeeAction numberAction = (EmployeeAction) proxy.getAction();
+	       try {
+			assertEquals("success", numberAction.execute());
+		} catch (Exception e) {
+			
+			logger.log(Level.SEVERE, e.getMessage());
+		}
+	 
+	        
+	    }
 	}
- 
-        
-    }
-}
+
+
