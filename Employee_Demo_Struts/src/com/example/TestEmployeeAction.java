@@ -2,12 +2,14 @@ package com.example;
 
 
 import org.apache.struts2.StrutsTestCase;
+import org.junit.Test;
 
 import com.opensymphony.xwork2.ActionProxy;
 
 public class TestEmployeeAction  extends StrutsTestCase {
 	    
-	    public void testSuccessfulLogin() {
+	@Test   
+	public void testSuccessfulRegistration() {
 	    	request.setParameter("age", "25");
 	        
 	        ActionProxy proxy = getActionProxy("/addEmployee");
