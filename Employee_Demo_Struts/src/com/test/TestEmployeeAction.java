@@ -6,6 +6,7 @@ import java.util.logging.Logger;
 
 import org.apache.struts2.StrutsTestCase;
 import org.junit.Test;
+import com.example.EmployeeAction;
 
 import com.opensymphony.xwork2.ActionProxy;
 
